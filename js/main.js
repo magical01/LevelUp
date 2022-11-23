@@ -1,43 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
   
-  const input = document?.querySelector('.input');
+  const inputTel = document?.querySelector('.input-tel');
 
-  const slidesWrapper = document?.querySelector('.slider');
-  const slidesField = document?.querySelector('.slider-track');
-  const slides = document?.querySelectorAll('.slider-slide');
-  const prev = document?.querySelector('.reviews__prev');
-  const next = document?.querySelector('.reviews__next');
-  const width = window.getComputedStyle(slidesWrapper).width;
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    slidesPerView: '1',
+    spaceBetween: 50,
+    speed: 600,
+    navigation: {
+      nextEl: '.reviews__next',
+      prevEl: '.reviews__prev',
+    },
 
-  let slideIndex = 1;
-  let offset = 0;
+  });
 
-  next?.addEventListener('click', setNextSlide);
-  prev?.addEventListener('click', setPrevSlide);
-
-  function setNextSlide() {
-    if (offset == +width.slice(0, width.length - 2) * (slides.length - 1)) {
-      offset = 0;
-    } else {
-      offset += +width.slice(0, width.length - 2);
-    }
-
-    slidesField.style.transform = `translateX(-${offset}px)`;
-  }
-
-  function setPrevSlide() {
-    if (offset == 0) {
-      offset = +width.slice(0, width.length - 2) * (slides.length - 1);
-    } else {
-      offset -= +width.slice(0, width.length - 2);
-    }
-
-    slidesField.style.transform = `translateX(-${offset}px)`;
-  }
-
-  input?.addEventListener('input', (e) => {
+  inputTel?.addEventListener('input', (e) => {
     const value = e.target.value;
     e.target.value = value.replace(/\D/g, '');
   });
+
+
+  // let futureTime = new Date().getTime() + 1800500;
+
+  // function renderTimerRes() {
+  //   let difference = futureTime - new Date().getTime();
+  //   const oneDay = 24 * 60 * 60 * 1000;
+  //   const oneHour = 60 * 60 * 1000;
+  //   const oneMinute = 60 * 1000;
+  //   let day = Math.floor(difference / oneDay);
+  //   let hours =  Math.floor((difference % oneDay) / oneHour);
+  //   let minute =  Math.floor((difference % oneHour) / oneMinute);
+  //   let sec =  Math.floor((difference % oneMinute) / 1000);
+    
+  //   if (sec <= 0) {
+  //     clearInterval(timerId)
+  //   }
+  //   const elemDay = document.querySelector('.app__bg--day span');
+  //   const elemHrs = document.querySelector('.app__bg--hrs span');
+  //   const elemMin = document.querySelector('.app__bg--min span');
+  //   const elemSec = document.querySelector('.app__bg--sec span');
+
+  //   elemDay.textContent = day;
+  //   elemHrs.textContent = hours;
+  //   elemMin.textContent = minute;
+  //   elemSec.textContent = sec;
+  // }
+  // renderTimerRes();
+  
+  // let timerId = setInterval(renderTimerRes, 1000);
 
 });

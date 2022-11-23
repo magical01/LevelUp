@@ -20,8 +20,10 @@
   <link rel="preload" href="fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/MullerMedium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/MullerBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/swiper-bundle.min.js"></script>
   <script defer src="js/main.js"></script>
 </head>
 
@@ -31,9 +33,9 @@
       <div class="container header__container">
         <nav class="nav" title="Главное меню">
           <ul class="nav__list list-reset">
-            <li class="nav__item"><a class="nav__link" href="#">Состав</a></li>
-            <li class="nav__item"><a class="nav__link" href="#">Отзывы</a></li>
-            <li class="nav__item"><a class="nav__link" href="#">Купить</a></li>
+            <li class="nav__item"><a class="nav__link" href="#structure">Состав</a></li>
+            <li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a></li>
+            <li class="nav__item"><a class="nav__link" href="#footer">Купить</a></li>
           </ul>
         </nav>
       </div>
@@ -86,11 +88,11 @@
             </div>
           </div>
           <div class="centered">
-            <a class="hero__link main-link" href="#">Сделать заказ</a>
+            <a class="hero__link main-link" href="#footer">Сделать заказ</a>
           </div>
         </div>
       </section>
-      <section class="structure">
+      <section class="structure" id="structure">
         <div class="container">
           <h2 class="structure__title title">Состав продукта</h2>
           <div class="structure__content">
@@ -147,55 +149,61 @@
             </div>
           </div>
           <div class="centered">
-            <a class="structure__link main-link" href="#">Сделать заказ</a>
+            <a class="structure__link main-link" href="#footer">Сделать заказ</a>
           </div>
         </div>
       </section>
-      <section class="reviews">
+      <section class="reviews" id="reviews">
         <div class="container reviews__container">
           <h2 class="reviews__title title">Отзывы</h2>
-          <div class="slider">
-            <div class="slider-track">
-              <div class="slider-slide">
-                <div class="slider-slide__image">
-                  <picture>
-                    <source srcset="img/reviews.avif" type="image/avif">
-                    <source srcset="img/reviews.webp" type="image/webp">
-                    <img src="img/reviews.png" width="183" height="183" alt="Покупатель Сергей">
-                  </picture>
-                </div>
-                <div class="slider-slide__text">
-                  <strong class="slider-slide__title">Сергей</strong>
-                  <p class="slider-slide__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, quas?
-                  </p>
-                </div>
-              </div>
-              <div class="slider-slide">
-                <div class="slider-slide__image">
-                  <picture>
-                    <source srcset="img/reviews.avif" type="image/avif">
-                    <source srcset="img/reviews.webp" type="image/webp">
-                    <img src="img/reviews.png" width="183" height="183" alt="Покупатель Анатолий">
-                  </picture>
-                </div>
-                <div class="slider-slide__text">
-                  <strong class="slider-slide__title">Анатолий</strong>
-                  <p class="slider-slide__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, quas?
-                  </p>
+          <div class="swiper slider">
+            <div class="swiper-wrapper slider-track">
+              <div class="swiper-slide slider-slide">
+                <div class="slider-slide__content">
+                  <div class="slider-slide__image">
+                    <picture>
+                      <source srcset="img/reviews.avif" type="image/avif">
+                      <source srcset="img/reviews.webp" type="image/webp">
+                      <img src="img/reviews.png" width="183" height="183" alt="Покупатель Сергей">
+                    </picture>
+                  </div>
+                  <div class="slider-slide__text">
+                    <strong class="slider-slide__title">Сергей</strong>
+                    <p class="slider-slide__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, quas?
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div class="slider-slide">
-                <div class="slider-slide__image">
-                  <picture>
-                    <source srcset="img/reviews.avif" type="image/avif">
-                    <source srcset="img/reviews.webp" type="image/webp">
-                    <img src="img/reviews.png" width="183" height="183" alt="Покупатель Михаил">
-                  </picture>
+              <div class="swiper-slide slider-slide">
+                <div class="slider-slide__content">
+                  <div class="slider-slide__image">
+                    <picture>
+                      <source srcset="img/reviews.avif" type="image/avif">
+                      <source srcset="img/reviews.webp" type="image/webp">
+                      <img src="img/reviews.png" width="183" height="183" alt="Покупатель Анатолий">
+                    </picture>
+                  </div>
+                  <div class="slider-slide__text">
+                    <strong class="slider-slide__title">Анатолий</strong>
+                    <p class="slider-slide__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, quas?
+                    </p>
+                  </div>
                 </div>
-                <div class="slider-slide__text">
-                  <strong class="slider-slide__title">Михаил</strong>
-                  <p class="slider-slide__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, quas?
-                  </p>
+              </div>
+              <div class="swiper-slide slider-slide">
+                <div class="slider-slide__content">
+                  <div class="slider-slide__image">
+                    <picture>
+                      <source srcset="img/reviews.avif" type="image/avif">
+                      <source srcset="img/reviews.webp" type="image/webp">
+                      <img src="img/reviews.png" width="183" height="183" alt="Покупатель Михаил">
+                    </picture>
+                  </div>
+                  <div class="slider-slide__text">
+                    <strong class="slider-slide__title">Михаил</strong>
+                    <p class="slider-slide__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, quas?
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -220,11 +228,72 @@
           </div>
         </div>
       </section>
+      <section class="advantages">
+        <div class="container advantages__container">
+          <div class="advantages__content">
+            <div class="advantages__left">
+              <ul class="advantages__list list-reset">
+                <li class="advantages__item">
+                  <h3 class="advantages__caption">Первая характеристика</h3>
+                  <p class="advantages__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, voluptates? Obcaecati, esse quo a explicabo similique ex maiores corporis nam exercitationem quod ad eveniet voluptatem.</p>
+                </li>
+                <li class="advantages__item">
+                  <h3 class="advantages__caption">Вторая характеристика</h3>
+                  <p class="advantages__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, voluptates? Obcaecati, esse quo a explicabo similique ex maiores corporis nam exercitationem quod ad eveniet voluptatem.</p>
+                </li>
+                <li class="advantages__item">
+                  <h3 class="advantages__caption">Третья характеристика</h3>
+                  <p class="advantages__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, voluptates? Obcaecati, esse quo a explicabo similique ex maiores corporis nam exercitationem quod ad eveniet voluptatem.</p>
+                </li>
+              </ul>
+            </div>
+            <div class="advantages__right">
+              <picture>
+                <source srcset="img/doctor.avif" type="image/avif">
+                <source srcset="img/doctor.webp" type="image/webp">
+                <img src="img/doctor.png" width="902" height="1014" alt="Доктор">
+              </picture>
+            </div>
+          </div>
+          <div class="centered">
+            <a class="advantages__link main-link" href="#footer">Сделать заказ</a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="footer">
-      <div class="container">
+    <footer class="footer" id="footer">
+      <div class="container footer__container">
+        <h2 class="footer__title title">Оформить заказ</h2>
+        <div class="footer__content">
+          <div class="footer__left">
+            <form class="form">
+              <div class="form__group">
+                <input class="form__input input-reset input-tel" type="text" name="tel" placeholder="+79123456789">
+                <label class="form__label">Укажите ваш номер телефона</label>
+              </div>
+              <div class="form__group">
+                <input class="form__input input-reset input-name" type="text" name="name" placeholder="Ваше имя">
+                <label class="form__label"> Укажите ваше имя</label>
+              </div>
+              <button class="form__btn btn-reset main-link">Сделать заказ</button>
+            </form>
+          </div>
+          <div class="footer__right">
+            <picture>
+              <source srcset="img/prod.avif" type="image/avif">
+              <source srcset="img/prod.webp" type="image/webp">
+              <img src="img/prod.png" width="297" height="462" alt="Продукт LevelUp">
+            </picture>
+            <div class="footer__price">
+              <span class="footer__price-old">1690 ₽</span>
+              <span class="footer__price-new">1290 ₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer__timer">
 
+        </div>
       </div>
     </footer>
   </div>

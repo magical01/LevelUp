@@ -108,7 +108,15 @@ a {
 .container {
   margin: 0 auto;
   padding: 0 40px;
-  max-width: 1280px;
+  max-width: 1440px;
+
+  @media (max-width: 1024px) {
+    padding: 0 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
 }
 
 .centered {
@@ -136,6 +144,8 @@ a {
   line-height: 48px;
   color: #fff;
   text-align: center;
+
+
 }
 
 .main-link {
@@ -190,8 +200,6 @@ a {
   &__content {
     display: flex;
     margin-bottom: 30px;
-    // padding-left: 300px;
-    // padding-right: 300px;
   }
 
   &__left {
@@ -340,24 +348,36 @@ a {
   padding-top: 80px;
   padding-bottom: 100px;
 
+  @media (max-width: 768px) {
+    padding-top: 50px;
+  }
+
   &__container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    position: relative; 
   }
 
   &__title {
     margin-bottom: 80px;
     color: #3E74FF;
-  }
 
-  // &__buttons {
-  //   position: absolute;
-  // }
+    @media (max-width: 768px) {
+      margin-bottom: 50px;
+    }
+  }
 
   &__btn {
     width: 40px;
     height: 50px;
+
+    @media (max-width: 768px) {
+      width: 35px;
+      height: 45px;
+    }
+    
+    @media (max-width: 576px) {
+      width: 30px;
+      height: 35px;
+    }
   }
 
   &__icon {
@@ -375,34 +395,87 @@ a {
       }
     }
   }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__prev {
+    position: absolute;
+    bottom: 22%;
+    left: 10%;
+    z-index: 10;
+
+    @media (max-width: 1100px) {
+      left: 5%;
+    }
+
+    @media (max-width: 1024px) {
+      position: initial;
+      margin-right: 150px;
+    }
+
+    @media (max-width: 576px) {
+      margin-right: 100px;
+    }
+  }
+
+  &__next {
+    position: absolute;
+    bottom: 22%;
+    right: 10%;
+    z-index: 10;
+
+    @media (max-width: 1100px) {
+      right: 5%;
+    }
+
+    @media (max-width: 1024px) {
+      position: initial;
+    }
+  }
 }
 
 .slider {
-  overflow: hidden;
-  width: 700px;
-  align-self: center;
+  width: 100%;
 
-  &-track {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: all .5s;
+  @media (max-width: 1024px) {
+    margin-bottom: 30px;
   }
 
   &-slide {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 5px;
-    padding: 25px;
-    width: 100%;
-    height: 100%;
-    background: #E5E5E5;
 
-    &__images {
+    &__content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      padding: 25px;
+      width: 700px;
+      min-height: 150px;
+      background: #E5E5E5;
+
+      @media (max-width: 576px) {
+        padding: 15px;
+      }
+    }
+
+    &__image {
       picture {
         display: flex;
+
+        @media (max-width: 600px) {
+          width: 125px;
+          height: 125px;
+        }
+
+        @media (max-width: 576px) {
+          width: 100px;
+          height: 100px;
+        }
       }
     }
 
@@ -417,6 +490,16 @@ a {
       font-size: 28px;
       line-height: 34px;
       color: #313131;
+
+      @media (max-width: 768px) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 20px;
+        line-height: 24px;
+      }
     }
 
     &__descr {
@@ -424,6 +507,175 @@ a {
       font-weight: 400;
       font-size: 18px;
       line-height: 24px;
+
+      @media (max-width: 576px) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.advantages {
+  background: linear-gradient(107.56deg, #3E74FF 0%, #3C55D1 100%);
+
+  &__container {
+    position: relative;
+    padding-bottom: 100px;
+
+  }
+
+  &__content {
+    display: flex;
+    margin-bottom: 50px;
+    padding-top: 150px;
+  }
+
+  &__left {
+    position: relative;
+    flex-basis: 45%;
+    z-index: 2;
+  }
+
+  &__right {
+    position: absolute;
+    right: -206px;
+    bottom: 0px;
+
+    picture {
+      display: flex;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    & + & {
+      margin-top: 70px;
+    }
+  }
+
+  &__caption {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    color: #fff;
+  }
+
+  &__descr {
+    margin: 0;
+    font-size: 24px;
+    line-height: 30px;
+    color: #fff;
+  }
+
+  &__link {
+    position: relative;
+    z-index: 10;
+    color: #3E74FF;
+    background-color: #fff;
+
+    &:hover {
+      background-color:  #FFFFF0;
+      transition: background-color .3s, color .3s;
+    }
+  }
+}
+
+.footer {
+  padding-top: 80px;
+
+  &__title {
+    margin-bottom: 80px;
+    color: #3E74FF;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__left {
+    flex-basis: 50%;
+  }
+
+  &__right {
+    display: flex;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__group {
+    position: relative;
+
+    & + & {
+      margin-top: 60px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: -24px;
+    left: 2px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+    transition: top .3s, font-size .3s;
+  }
+
+  &__input {
+    position: relative;
+    border: 1px solid #E1E1E1;
+    outline: none;
+    z-index: 10;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 20px;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    background-color: #E1E1E1;
+    transition: border-color .3s;
+
+    &::placeholder {
+      transition: opacity .3s;
+    }
+    
+    &:focus,
+    &:active {
+      border: 1px solid #3E74FF;
+      transition: border-color .3s, top .3s, font-size .3s, opacity .3s;
+
+      & ~ .form__label, .form__input:not(:placeholder-shown) ~ .form__label {
+        top: -28px;
+        font-size: 14px;
+        transition: top .3s, font-size .3s
+      }
+
+      &::placeholder {
+        opacity: 0;
+        transition: opacity .3s;
+      }
+    }
+
+  }
+
+  &__btn {
+    margin-top: 60px;
+    &:hover {
+      background-color: #3E74FF;
+      transition: background-color .3s;
     }
   }
 }
