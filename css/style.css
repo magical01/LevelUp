@@ -297,39 +297,72 @@ a {
 
 .reviews {
   padding-top: 80px;
-  padding-bottom: 190px;
+  padding-bottom: 100px;
+}
+.reviews__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .reviews__title {
   margin-bottom: 80px;
-  color: #000;
+  color: #3E74FF;
+}
+.reviews__btn {
+  width: 40px;
+  height: 50px;
+}
+.reviews__icon {
+  width: 100%;
+  height: 100%;
+}
+.reviews__icon path {
+  transition: fill-opacity 0.3s;
+}
+.reviews__icon:hover path {
+  fill-opacity: 1;
+  transition: fill-opacity 0.3s;
 }
 
 .slider {
   overflow: hidden;
-  width: 600px;
+  width: 700px;
+  align-self: center;
 }
 .slider-track {
   display: flex;
   width: 100%;
   height: 100%;
-  transition: all 0.4s;
+  transition: all 0.5s;
 }
 .slider-slide {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  padding: 30px;
+  border-radius: 5px;
+  padding: 25px;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #FFFFFF 9.56%, rgba(255, 255, 255, 0) 33.33%, rgba(255, 255, 255, 0.0899566) 66.67%, rgba(255, 255, 255, 0.37956) 77.27%, #FFFFFF 89.78%);
+  background: #E5E5E5;
 }
 .slider-slide__images picture {
   display: flex;
 }
 .slider-slide__image {
-  height: 250px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  margin-right: 20px;
+}
+.slider-slide__title {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 34px;
+  color: #313131;
+}
+.slider-slide__descr {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
 }/*# sourceMappingURL=style.css.map */
