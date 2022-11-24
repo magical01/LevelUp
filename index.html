@@ -49,7 +49,10 @@
 
     <main class="main">
       <section class="hero">
-        <div class="container">
+        <div class="hero__video video">
+          <video class="video__media" src="video/video1080.mp4" autoplay muted loop></video>
+        </div>
+        <div class="container hero__container">
           <h1 class="visually-hidden">Продукт LevelUp - для повышения потенции</h1>
           <div class="centered">
             <a class="logo" href="#">
@@ -274,17 +277,20 @@
         <div class="footer__content">
           <div class="footer__left">
             <form class="form" action="/">
-              <div class="form__group">
-                <input class="form__input input-reset input-tel" type="tel" name="Номер телефона" placeholder="+79123456789" required>
-                <label class="form__label" >Укажите ваш номер телефона</label>
-                <span class="form__span" data-text="+79123456789"></span>
-              </div>
-              <div class="form__group">
-                <input class="form__input input-reset input-name" type="text" name="Имя пользователя" placeholder="Ваше имя" required>
-                <label class="form__label"> Укажите ваше имя</label>
-                <span class="form__span" data-text="Иван Иванов"></span>
-              </div>
-              <button class="form__btn btn-reset main-link" type="submit">Сделать заказ</button>
+              <fieldset class="form__fieldset">
+                <legend class="visually-hidden">Заполните данные чтобы оформить заказ</legend>
+                <div class="form__group">
+                  <input class="form__input input-reset input-tel" type="tel" name="Номер телефона" placeholder="+79123456789" required>
+                  <label class="form__label" >Укажите ваш номер телефона</label>
+                  <span class="form__span" data-text="+79123456789"></span>
+                </div>
+                <div class="form__group">
+                  <input class="form__input input-reset input-name" type="text" name="Имя пользователя" placeholder="Ваше имя" required>
+                  <label class="form__label"> Укажите ваше имя</label>
+                  <span class="form__span" data-text="Иван Иванов"></span>
+                </div>
+                <button class="form__btn btn-reset main-link" type="submit">Сделать заказ</button>
+              </fieldset>
             </form>
           </div>
           <div class="footer__right">
@@ -300,12 +306,15 @@
           </div>
         </div>
         <div class="footer__timer">
-          <div class="footer__timer-box footer__timer-minutes">
-            <span>30</span>
-          </div>
-          <div class="footer__timer-dots">:</div>
-          <div class="footer__timer-box footer__timer-seconds">
-            <span>00</span>
+          <span class="footer__timer-sale">До конца скидки</span>
+          <div class="footer__timer-wrapper">
+            <div class="footer__timer-box footer__timer-minutes">
+              <span>30</span>
+            </div>
+            <div class="footer__timer-dots">:</div>
+            <div class="footer__timer-box footer__timer-seconds">
+              <span>00</span>
+            </div>
           </div>
         </div>
       </div>

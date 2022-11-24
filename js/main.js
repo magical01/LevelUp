@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  
-  const inputTel = document?.querySelector('.input-tel');
-
+  // swiper.js
   const swiper = new Swiper('.swiper', {
     loop: true,
     slidesPerView: '1',
@@ -14,12 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   });
 
+  // input
+  const inputTel = document?.querySelector('.input-tel');
+
   inputTel?.addEventListener('input', (e) => {
     const value = e.target.value;
     e.target.value = value.replace(/\D/g, '').substring(0, 11);
   });
 
-
+  // timer
   let futureTime = new Date().getTime() + 1800500;
 
   function renderTime() {
@@ -35,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sec < 0) {
       return
     }
-    const elemMin = document.querySelector('.footer__timer-minutes span');
-    const elemSec = document.querySelector('.footer__timer-seconds span');
+    const elemMin = document?.querySelector('.footer__timer-minutes span');
+    const elemSec = document?.querySelector('.footer__timer-seconds span');
 
     elemMin.textContent = minute;
     elemSec.textContent = sec;
@@ -50,7 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   renderTime();
-  
   setInterval(renderTime, 1000);
-
 });

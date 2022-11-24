@@ -154,7 +154,13 @@ a {
   transition: background-color 0.3s, color 0.3s;
 }
 
+.header {
+  position: absolute;
+  width: 100%;
+}
 .header__container {
+  position: relative;
+  z-index: 20;
   padding-top: 46px;
   padding-bottom: 46px;
 }
@@ -173,16 +179,73 @@ a {
   margin-left: 44px;
 }
 .nav__link {
-  color: rgba(62, 116, 255, 0.5);
-  transition: color 0.3s;
-}
-.nav__link:hover {
+  position: relative;
   color: #3e74ff;
   transition: color 0.3s;
 }
+.nav__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s;
+}
+.nav__link:hover {
+  color: white;
+  transition: color 0.3s;
+}
+.nav__link:hover::before {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #E5E5E5;
+  background-image: url("../img/video-cover.avif");
+  background-image: -webkit-image-set(url("../img/video-cover.avif") type("image/avif"), url("../img/video-cover.webp") type("image/webp"), url("../img/video-cover.png"));
+  background-image: image-set(url("../img/video-cover.avif") type("image/avif"), url("../img/video-cover.webp") type("image/webp"), url("../img/video-cover.png"));
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.video::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.video__media {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: translate(-50%, -50%);
+}
 
 .hero {
+  position: relative;
+  padding-top: 116px;
   padding-bottom: 80px;
+}
+.hero__container {
+  position: relative;
+  z-index: 20;
 }
 .hero__content {
   display: flex;
@@ -221,6 +284,7 @@ a {
   font-weight: 500;
   font-size: 32px;
   line-height: 38px;
+  color: #fff;
 }
 .hero__descr {
   margin: 0;
@@ -228,9 +292,14 @@ a {
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
+  color: #fff;
 }
 .hero__link:hover {
   background-color: #3E74FF;
+  transition: background-color 0.3s;
+}
+.hero__link:active {
+  background-color: #0a4cf6;
   transition: background-color 0.3s;
 }
 
@@ -320,6 +389,10 @@ a {
 }
 .structure__link:hover {
   background-color: #FFFFF0;
+  transition: background-color 0.3s, color 0.3s;
+}
+.structure__link:active {
+  background-color: #E1E1E1;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -548,6 +621,10 @@ a {
   background-color: #FFFFF0;
   transition: background-color 0.3s, color 0.3s;
 }
+.advantages__link:active {
+  background-color: #E1E1E1;
+  transition: background-color 0.3s, color 0.3s;
+}
 
 .footer {
   padding-top: 80px;
@@ -612,6 +689,21 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.footer__timer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__timer-sale {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: #3E74FF;
 }
 .footer__timer-dots {
   font-weight: 700;
@@ -667,6 +759,11 @@ a {
 .form {
   display: flex;
   flex-direction: column;
+}
+.form__fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 .form__group {
   position: relative;
@@ -732,6 +829,7 @@ a {
 .form__input:focus ~ .form__span::before, .form__input:active ~ .form__span::before {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 .form__input:focus::-moz-placeholder, .form__input:active::-moz-placeholder {
   opacity: 0;
@@ -754,7 +852,6 @@ a {
   top: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 0.3s, visibility 0.3s;
 }
 .form__span::before {
   content: attr(data-text);
@@ -768,8 +865,17 @@ a {
 }
 .form__btn {
   margin-top: 60px;
+  width: 100%;
 }
 .form__btn:hover {
   background-color: #3E74FF;
   transition: background-color 0.3s;
+}
+.form__btn:active {
+  background-color: #0a4cf6;
+  transition: background-color 0.3s;
+}
+
+.input-name {
+  padding-right: 118px;
 }/*# sourceMappingURL=style.css.map */
