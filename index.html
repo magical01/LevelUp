@@ -15,8 +15,14 @@
   <meta name="format-detection" content="address=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#111111">
+  <meta name="msapplication-TileColor" content="#da532c">
   <title>LevelUp</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+  <link rel="manifest" href="icon/site.webmanifest">
+  <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
   <link rel="preload" href="fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/MullerMedium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/MullerBold.woff2" as="font" type="font/woff2" crossorigin>
@@ -131,19 +137,19 @@
                   <div class="structure__image">
                     <img src="img/light.svg" alt="Энергия" aria-hidden="true">
                   </div>
+                  <h3 class="structure__caption">Мака</h3>
+                </li>
+                <li class="structure__right-item structure__item">
+                  <div class="structure__image">
+                    <img src="img/light.svg" alt="Энергия" aria-hidden="true">
+                  </div>
+                  <h3 class="structure__caption">Крапива</h3>
+                </li>
+                <li class="structure__right-item structure__item">
+                  <div class="structure__image">
+                    <img src="img/light.svg" alt="Энергия" aria-hidden="true">
+                  </div>
                   <h3 class="structure__caption">Йохимбин</h3>
-                </li>
-                <li class="structure__right-item structure__item">
-                  <div class="structure__image">
-                    <img src="img/light.svg" alt="Энергия" aria-hidden="true">
-                  </div>
-                  <h3 class="structure__caption">Корень крапивы</h3>
-                </li>
-                <li class="structure__right-item structure__item">
-                  <div class="structure__image">
-                    <img src="img/light.svg" alt="Энергия" aria-hidden="true">
-                  </div>
-                  <h3 class="structure__caption">Трава похотливого козла</h3>
                 </li>
               </ul>
             </div>
@@ -267,16 +273,18 @@
         <h2 class="footer__title title">Оформить заказ</h2>
         <div class="footer__content">
           <div class="footer__left">
-            <form class="form">
+            <form class="form" action="/">
               <div class="form__group">
-                <input class="form__input input-reset input-tel" type="text" name="tel" placeholder="+79123456789">
-                <label class="form__label">Укажите ваш номер телефона</label>
+                <input class="form__input input-reset input-tel" type="tel" name="Номер телефона" placeholder="+79123456789" required>
+                <label class="form__label" >Укажите ваш номер телефона</label>
+                <span class="form__span" data-text="+79123456789"></span>
               </div>
               <div class="form__group">
-                <input class="form__input input-reset input-name" type="text" name="name" placeholder="Ваше имя">
+                <input class="form__input input-reset input-name" type="text" name="Имя пользователя" placeholder="Ваше имя" required>
                 <label class="form__label"> Укажите ваше имя</label>
+                <span class="form__span" data-text="Иван Иванов"></span>
               </div>
-              <button class="form__btn btn-reset main-link">Сделать заказ</button>
+              <button class="form__btn btn-reset main-link" type="submit">Сделать заказ</button>
             </form>
           </div>
           <div class="footer__right">
@@ -286,13 +294,19 @@
               <img src="img/prod.png" width="297" height="462" alt="Продукт LevelUp">
             </picture>
             <div class="footer__price">
-              <span class="footer__price-old">1690 ₽</span>
-              <span class="footer__price-new">1290 ₽</span>
+              <span class="footer__price-old">1690₽</span>
+              <span class="footer__price-new">1290₽</span>
             </div>
           </div>
         </div>
         <div class="footer__timer">
-
+          <div class="footer__timer-box footer__timer-minutes">
+            <span>30</span>
+          </div>
+          <div class="footer__timer-dots">:</div>
+          <div class="footer__timer-box footer__timer-seconds">
+            <span>00</span>
+          </div>
         </div>
       </div>
     </footer>

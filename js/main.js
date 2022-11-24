@@ -16,37 +16,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   inputTel?.addEventListener('input', (e) => {
     const value = e.target.value;
-    e.target.value = value.replace(/\D/g, '');
+    e.target.value = value.replace(/\D/g, '').substring(0, 11);
   });
 
 
-  // let futureTime = new Date().getTime() + 1800500;
+  let futureTime = new Date().getTime() + 1800500;
 
-  // function renderTimerRes() {
-  //   let difference = futureTime - new Date().getTime();
-  //   const oneDay = 24 * 60 * 60 * 1000;
-  //   const oneHour = 60 * 60 * 1000;
-  //   const oneMinute = 60 * 1000;
-  //   let day = Math.floor(difference / oneDay);
-  //   let hours =  Math.floor((difference % oneDay) / oneHour);
-  //   let minute =  Math.floor((difference % oneHour) / oneMinute);
-  //   let sec =  Math.floor((difference % oneMinute) / 1000);
+  function renderTime() {
+    let difference = futureTime - new Date().getTime();
+    const oneDay = 24 * 60 * 60 * 1000;
+    const oneHour = 60 * 60 * 1000;
+    const oneMinute = 60 * 1000;
+    let day = Math.floor(difference / oneDay);
+    let hours =  Math.floor((difference % oneDay) / oneHour);
+    let minute =  Math.floor((difference % oneHour) / oneMinute);
+    let sec =  Math.floor((difference % oneMinute) / 1000);
     
-  //   if (sec <= 0) {
-  //     clearInterval(timerId)
-  //   }
-  //   const elemDay = document.querySelector('.app__bg--day span');
-  //   const elemHrs = document.querySelector('.app__bg--hrs span');
-  //   const elemMin = document.querySelector('.app__bg--min span');
-  //   const elemSec = document.querySelector('.app__bg--sec span');
+    if (sec < 0) {
+      return
+    }
+    const elemMin = document.querySelector('.footer__timer-minutes span');
+    const elemSec = document.querySelector('.footer__timer-seconds span');
 
-  //   elemDay.textContent = day;
-  //   elemHrs.textContent = hours;
-  //   elemMin.textContent = minute;
-  //   elemSec.textContent = sec;
-  // }
-  // renderTimerRes();
+    elemMin.textContent = minute;
+    elemSec.textContent = sec;
+
+    if (minute < 10) {
+      elemMin.textContent = `0${minute}`;
+    }
+
+    if (sec < 10) {
+      elemSec.textContent = `0${sec}`;
+    }
+  }
+  renderTime();
   
-  // let timerId = setInterval(renderTimerRes, 1000);
+  setInterval(renderTime, 1000);
 
 });
